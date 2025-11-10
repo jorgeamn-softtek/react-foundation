@@ -1,10 +1,10 @@
-import { Counter } from "./components";
+import { CounterWithHook } from "./components/CouterWithHook";
 
 function App() {
   return (
     <main>
       <h1>Introduccion a React</h1>
-      <Counter></Counter>
+      <CounterWithHook />
     </main>
   );
 }
