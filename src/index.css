@@ -70,7 +70,7 @@ button:focus-visible {
 main {
   display: flex;
   width: 100%;
-  flex-direction: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
