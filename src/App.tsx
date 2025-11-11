@@ -1,10 +1,10 @@
-import { LoginPage } from "./components";
+import { UserPage } from "./components";
 
 function App() {
   return (
     <main>
       <h1>Introduccion a React</h1>
-      <LoginPage />
+      <UserPage></UserPage>
     </main>
   );
 }
