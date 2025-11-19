@@ -6,18 +6,28 @@ export const FormsPage = () => {
     password: string;
   };
 
-  const { register } = useForm<FormData>({
+  const { register, handleSubmit, formState, watch } = useForm<FormData>({
     defaultValues: {
       email: "jorge@jorge.com",
       password: "password",
     },
   });
 
+  const onSubmit = (form: FormData) => {
+    console.log(form);
+  };
+
+  console.log(watch("email"));
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <input type="text" placeholder="Email" {...register("email")} />
+          <input
+            type="text"
+            placeholder="Email"
+            {...register("email", { required: true })}
+          />
           <input
             type="password"
             placeholder="Password"
@@ -26,6 +36,8 @@ export const FormsPage = () => {
           <button type="submit">Login</button>
         </div>
       </form>
+
+      <pre>{JSON.stringify(formState, null)}</pre>
     </>
   );
 };
